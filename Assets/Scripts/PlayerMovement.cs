@@ -64,17 +64,17 @@ public class PlayerMovement : MonoBehaviour
         return ToString();
     }
 
-    // /*OnCollisionEnter2D checks if the collider of the lawnmower interacts with a tile map collider. if so, 
-    // then set the tile to null. May want to change to OnCollisionExit so when lawnmower goes PAST the tile, the method
-    // body runs*/
-    // void OnCollisionEnter2D(Collision2D col) { // Put this method in the update method. Figure out what goes in as the parameter
-    //     Vector3 contactPoint = col.GetContact(0).point;
-    //     Vector3Int cellPosition = uncutGrass.WorldToCell(contactPoint);
-    //     TileBase tile = uncutGrass.GetTile(cellPosition);
-    //     if (tile != null) {
-    //         uncutGrass.SetTile(cellPosition, null);
-    //     }
-    // }
+    /*OnCollisionEnter2D checks if the collider of the lawnmower interacts with a tile map collider. if so, 
+    then set the tile to null. May want to change to OnCollisionExit so when lawnmower goes PAST the tile, the method
+    body runs*/
+    void OnCollisionEnter2D(Collision2D col) { // Put this method in the update method. Figure out what goes in as the parameter
+        Vector3 contactPoint = col.GetContact(0).point;
+        Vector3Int cellPosition = uncutGrass.WorldToCell(contactPoint);
+        TileBase tile = uncutGrass.GetTile(cellPosition);
+        if (tile != null) {
+            uncutGrass.SetTile(cellPosition, null);
+        }
+    }
 
 
     // void attachColliderstoTiles() {
