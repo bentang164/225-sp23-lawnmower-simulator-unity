@@ -14,16 +14,17 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float rotationSpeed;
 
-    public Tile uncutGrassTile;
-    public Tilemap uncutGrass;
+    public SpriteMask spriteMask;
+    public Transform lawnmowerTransform; // Transform refers to the position, rotation and scale of the lawnmower.
+    private Vector2 previousPosition;
+    public float spawnInterval = 2.0f;
+    public float timer = 0.0f;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         // We don't need to do anything here.
-
-        // attachColliderstoTiles();
-
     }
 
     // Update is called once per frame
@@ -57,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
+        spawnMask();
+
     }
 
     private string GetDebuggerDisplay()
@@ -64,44 +67,39 @@ public class PlayerMovement : MonoBehaviour
         return ToString();
     }
 
-    /*OnCollisionEnter2D checks if the collider of the lawnmower interacts with a tile map collider. if so, 
-    then set the tile to null. May want to change to OnCollisionExit so when lawnmower goes PAST the tile, the method
-    body runs*/
-    void OnCollisionEnter2D(Collision2D col) { // Put this method in the update method. Figure out what goes in as the parameter
-        Vector3 contactPoint = col.GetContact(0).point;
-        Vector3Int cellPosition = uncutGrass.WorldToCell(contactPoint);
-        TileBase tile = uncutGrass.GetTile(cellPosition);
-        if (tile != null) {
-            uncutGrass.SetTile(cellPosition, null);
-        }
-    }
-
-
-    // void attachColliderstoTiles() {
-    //     foreach (Vector3Int pos in uncutGrass.cellBounds.allPositionsWithin) {
-    //         TileBase tile = uncutGrass.GetTile(pos);
-    //         if (tile != null) {
-    //             // Create a new GameObject to hold the collider
-    //             GameObject colliderObj = new GameObject("Collider");
-    //             colliderObj.transform.parent = transform;
-
-    //             // Add a BoxCollider2D component to the GameObject
-    //             BoxCollider2D collider = colliderObj.AddComponent<BoxCollider2D>();
-
-    //             // Set the size of the collider to match the tile size
-    //             collider.size = new Vector2(uncutGrass.cellSize.x, uncutGrass.cellSize.y);
-
-    //             // Set the offset of the collider to match the tile position
-    //             collider.offset = uncutGrass.GetCellCenterWorld(pos);
-    //         }
-    //     }
-    // }
 
     private void OnTriggerEnter2D(Collider2D lawnmower)
     {
         if (lawnmower.CompareTag("Grass"))
         {
             UnityEngine.Debug.Log("Triggered");
+        }
+    }
+
+    /*Spawns a spriteMask to reveal what is underneath the grass layer. A timer is set to where after a specific
+    amount of time, a sprite mask appears and the timer is reset. Because this happens in update, the method is
+    called every frame of animation.*/
+    private void spawnMask() {
+
+        // Get the current position of the lawnmower
+        Vector2 currentPosition = lawnmowerTransform.position;
+
+        // Increment the timer
+        timer += Time.deltaTime;
+
+        // If the interval has passed, place a new mask on the ground (ex. spawn interval is 1 sec, so a new mask will spawn after 1 sec)
+        if (timer >= spawnInterval) {
+            //Instantiate allows us to spawn a new game object as the code runs
+            SpriteMask mask = Instantiate(spriteMask);
+
+            // The masks are positioned to spawn at the lawnmower's location, which is why transform is used
+            mask.transform.position = currentPosition;
+
+            // Update the previous position of the lawnmower to the current position
+            previousPosition = currentPosition;
+
+            // Reset the timer
+            timer = 0.0f;
         }
     }
     
