@@ -19,6 +19,7 @@ public class GrassMowing : MonoBehaviour
         for (int i = 0; i < 100; i++) {
             colors[i] = Color.green;
         }
+        print(colors);
     }
 
     // Update is called once per frame
@@ -28,12 +29,14 @@ public class GrassMowing : MonoBehaviour
         Rigidbody2D mowerBody = mower.GetComponent<Rigidbody2D>();
         Vector3Int vector = new Vector3Int((int) mowerBody.position.x, (int) mowerBody.position.y, 0);
 
+        print(spriteRenderer);
         texture = spriteRenderer.sprite.texture;
 
         texture.SetPixels((int) mowerBody.position.x, (int) mowerBody.position.y, 10, 10, colors, 0);
 
-        texture.Apply(false);
+        texture.Apply(true);
 
-        spriteRenderer.sprite = Sprite.Create(texture, new Rect(), new Vector2(0,0));
+        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0, 0, 14.0f, 14.0f), new Vector2(0,0));
+        
     }
 }
