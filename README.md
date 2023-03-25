@@ -17,4 +17,4 @@ Strengths of the TileMap approach:
 Limitations of the TileMap approach:
 - To make the mowing appear natural, the TileMap would have to be significantly scaled down. This messes up the bound/position checking code that happens in the script. 
 - Even with a tiny TileMap, jagged edges can still appear. 
-- Bounds and collision checking is weird. Sometimes, especially with larger tiles, tiles the mower isn't even going over will get removed.
+- Bounds and collision checking is weird. Sometimes, especially with larger tiles, tiles the mower isn't even going over will get removed. Position arguments must be passed as Integers, while ```transform.position.x``` and ```transform.position.y``` are floats. This inherently leads to less accurate position data. 
