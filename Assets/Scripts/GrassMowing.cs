@@ -13,7 +13,7 @@ public class GrassMowing : MonoBehaviour
     public Sprite basicSprite;
     Texture2D basicTex;
 
-    Color[] colors = new Color[100];
+    Color[] colors = new Color[16];
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class GrassMowing : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         //spriteRenderer.sprite = Sprite.Create(basicTex, new Rect(-256.0f, -256.0f, 256.0f, 256.0f), new Vector2(0.0f, 0.0f));
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 16; i++) {
             colors[i] = Color.green;
         }
         print(colors.Length);
@@ -41,12 +41,12 @@ public class GrassMowing : MonoBehaviour
 
         texture = spriteRenderer.sprite.texture;
 
-        texture.SetPixels((int) mowerBody.position.x, (int) mowerBody.position.y, 10, 10, colors, 0);
+        texture.SetPixels((int) mowerBody.position.x, (int) mowerBody.position.y, 4, 4, colors, 0);
         //texture.SetPixels(colors, 0);
 
         texture.Apply(true);
 
-        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0f, 0f, 100f, 100f), new Vector2(.5f,.5f));
+        //spriteRenderer.sprite = Sprite.Create(texture, new Rect(0f, 0f, 100f, 100f), new Vector2(.5f,.5f));
         
     }
 }
