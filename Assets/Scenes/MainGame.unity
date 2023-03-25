@@ -982,8 +982,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665066153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.57, y: -8.69, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.3642, y: -8.7761, z: 0}
+  m_LocalScale: {x: 0.5649335, y: 0.5344826, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   speed: 5
   rotationSpeed: 360
   spriteMask: {fileID: 0}
-  lawnmowerTransform: {fileID: 0}
+  lawnmower: {fileID: 0}
   spawnInterval: 2
   timer: 0
 --- !u!212 &1104416156
@@ -4589,8 +4589,8 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 180
   spriteMask: {fileID: 665066154}
-  lawnmowerTransform: {fileID: 1752845497}
-  spawnInterval: 0.1
+  lawnmower: {fileID: 1752845497}
+  spawnInterval: 0.01
   timer: 0
 --- !u!61 &1752845499
 BoxCollider2D:

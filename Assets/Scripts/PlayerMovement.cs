@@ -16,11 +16,10 @@ public class PlayerMovement : MonoBehaviour
     private float rotationSpeed;
 
     public SpriteMask spriteMask;
-    public Transform lawnmowerTransform; // Transform refers to the position, rotation and scale of the lawnmower.
+    public Transform lawnmower; // Transform refers to the position, rotation and scale of the lawnmower.
     private Vector2 previousPosition;
     public float spawnInterval = 0.0f;
     public float timer = 0.0f;
-    public float overlapDistance = 1.0f;
     
 
     // Start is called before the first frame update
@@ -84,65 +83,25 @@ public class PlayerMovement : MonoBehaviour
     private void spawnMask() {
 
         // Get the current position of the lawnmower
-        Vector2 currentPosition = lawnmowerTransform.position;
+        Vector2 currentPosition = lawnmower.position;
 
         // Increment the timer
         timer += Time.deltaTime;
 
         // If the interval has passed, place a new mask on the ground (ex. spawn interval is 1 sec, so a new mask will spawn after 1 sec)
         if (timer >= spawnInterval) {
-            SpriteMask[] maskArray = FindObjectsOfType<SpriteMask>();   //Retreives all of the spritemasks currently on scene
+            //Instantiate allows us to spawn a new game object as the code runs
+            SpriteMask mask = Instantiate(spriteMask);
 
-            foreach (SpriteMask spriteMask in maskArray) {
+            // The masks are positioned to spawn at the lawnmower's location, which is why transform is used
+            mask.transform.position = currentPosition;
 
-                if (spriteMask == null) {
-                    continue;
-                }
+            // Update the previous position of the lawnmower to the current position
+            previousPosition = currentPosition;
 
-                float distance = Vector2.Distance(spriteMask.transform.position, currentPosition);
+            // Reset the timer
+            timer = 0.0f;
 
-                if (distance <= overlapDistance) {
-                    ArrayList overlapMasks = new ArrayList();
-                    overlapMasks.Add(spriteMask);
-
-                    foreach (SpriteMask spriteMask2 in maskArray) {
-                        if (spriteMask2 == null) {
-                            continue;
-                        }
-                        float newDistance = Vector2.Distance(spriteMask2.transform.position, currentPosition);
-                        if (newDistance <= overlapDistance && !overlapMasks.Contains(spriteMask2)) {
-                            overlapMasks.Add(spriteMask2);
-                        }
-                    }
-
-                    if (overlapMasks.Count > 1) {
-                        GameObject combinedMaskObj = new GameObject("CombinedMask");
-                        SpriteMask combinedMask = combinedMaskObj.AddComponent<SpriteMask>();
-
-                        foreach (SpriteMask overlappingMask in overlapMasks) {
-                            combinedMask.sprite = overlappingMask.sprite; //add .spriteRender here maybe?
-                            Destroy(overlappingMask.gameObject);
-                        }
-
-                        SpriteMask firstMask = (SpriteMask) overlapMasks[0];
-                        combinedMaskObj.transform.position = firstMask.transform.position;
-                    }
-                }
-            }
-
-            if (spriteMask != null) {
-                //Instantiate allows us to spawn a new game object as the code runs
-                SpriteMask mask = Instantiate(spriteMask);
-
-                // The masks are positioned to spawn at the lawnmower's location, which is why transform is used
-                mask.transform.position = currentPosition;
-
-                // Update the previous position of the lawnmower to the current position
-                previousPosition = currentPosition;
-
-                // Reset the timer
-                timer = 0.0f;
-            }
         }
     }
     
