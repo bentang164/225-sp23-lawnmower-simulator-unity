@@ -34,12 +34,9 @@ public class GrassMowing : MonoBehaviour
     {
         mower = GameObject.Find("Player");
         Rigidbody2D mowerBody = mower.GetComponent<Rigidbody2D>();
-        Vector3Int vector = new Vector3Int((int) mowerBody.position.x, (int) mowerBody.position.y, 0);
 
         print(mowerBody.position.x);
         print(mowerBody.position.y);
-        print((int)mowerBody.position.x);
-        print((int)mowerBody.position.y);
 
 
         texture = spriteRenderer.sprite.texture;
@@ -49,7 +46,7 @@ public class GrassMowing : MonoBehaviour
 
         texture.Apply(true);
 
-        spriteRenderer.sprite = Sprite.Create(texture, new Rect(-8.0f, -8.0f, 256f, 256f), new Vector2(.5f,.5f));
+        spriteRenderer.sprite = Sprite.Create(texture, new Rect(0f, 0f, 100f, 100f), new Vector2(.5f,.5f));
         
     }
 }
