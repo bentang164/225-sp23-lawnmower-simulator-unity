@@ -6,6 +6,7 @@ Unity prototype of Lawnmower Simulator. Features:
 - Collisions with game objects such as the world barrier
 - Four different ways to mow the lawn:
   - TileMap-based mowing
+  - Sprite mask mowing
   - Pixel-by-pixel mowing
   - Particle-based mowing
   
