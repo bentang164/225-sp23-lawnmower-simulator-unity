@@ -41,7 +41,7 @@ public class GrassMowing : MonoBehaviour
 
         texture = spriteRenderer.sprite.texture;
 
-        texture.SetPixels((int) mowerBody.position.x, (int) mowerBody.position.y, 4, 4, colors, 0);
+        texture.SetPixels((int) mowerBody.position.x - 1, (int) mowerBody.position.y - 1, 4, 4, colors, 0);
         //texture.SetPixels(colors, 0);
 
         texture.Apply(true);
