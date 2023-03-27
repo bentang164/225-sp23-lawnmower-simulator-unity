@@ -84,25 +84,31 @@ public class PlayerMovement : MonoBehaviour
 
         // Get the current position of the lawnmower
         Vector2 currentPosition = lawnmower.position;
+        
+        // If the lawnmower has moved
+        if (currentPosition != previousPosition) {
 
-        // Increment the timer
-        timer += Time.deltaTime;
+            // Increment the timer
+            timer += Time.deltaTime;
 
-        // If the interval has passed, place a new mask on the ground (ex. spawn interval is 1 sec, so a new mask will spawn after 1 sec)
-        if (timer >= spawnInterval) {
-            //Instantiate allows us to spawn a new game object as the code runs
-            SpriteMask mask = Instantiate(spriteMask);
+            // If the interval has passed, place a new mask on the ground (ex. spawn interval is 1 sec, so a new mask will spawn after 1 sec)
+            if (timer >= spawnInterval) {
+                
+                //Instantiate allows us to spawn a new game object as the code runs
+                SpriteMask mask = Instantiate(spriteMask);
 
-            // The masks are positioned to spawn at the lawnmower's location, which is why transform is used
-            mask.transform.position = currentPosition;
+                // The masks are positioned to spawn at the lawnmower's location, which is why transform is used
+                mask.transform.position = currentPosition;
 
-            // Update the previous position of the lawnmower to the current position
-            previousPosition = currentPosition;
+                // Update the previous position of the lawnmower to the current position
+                previousPosition = currentPosition;
 
-            // Reset the timer
-            timer = 0.0f;
+                // Reset the timer
+                timer = 0.0f;
 
+            }
         }
+
     }
     
 
