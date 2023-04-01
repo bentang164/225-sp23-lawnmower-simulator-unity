@@ -40,35 +40,22 @@ public class DetectCompletion : MonoBehaviour
         float playerRawX = player.transform.position.x;
         float playerRawY = player.transform.position.y;
 
-        // Convert the raw values to strings, extract only the decimals, and convert back to an integer
-        int decimalX = int.Parse(playerRawX.ToString("0.00", CultureInfo.InvariantCulture).Split('.')[1]);
-        int decimalY = int.Parse(playerRawY.ToString("0.00", CultureInfo.InvariantCulture).Split('.')[1]);
-
-        // Perform rounding operations on the x-coordinate
-        int playerX;
-        if (decimalX >= 50)
+        // Update the completion tilemap at the player's x and y coordinates, based on position.
+        // This will NOT WORK if the size of the tilemap is changed from default scale!
+        if (playerRawY < 0 && playerRawX < 0)
         {
-            playerX = Mathf.CeilToInt(playerRawX);
+            Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY - 1, DEFAULT_Z));
+        } else if (playerRawY > 0 && playerRawX < 0)
+        {
+            Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY, DEFAULT_Z));
+        } else if (playerRawY < 0 && playerRawX > 0)
+        {
+            Mow(new Vector3Int((int) playerRawX, (int) playerRawY - 1, DEFAULT_Z));
         }
         else
         {
-            playerX = Mathf.FloorToInt(playerRawX);
+            Mow(new Vector3Int((int) playerRawX, (int) playerRawY, DEFAULT_Z));
         }
-
-        // Perform rounding operations on the y-coordinate
-        int playerY;
-        if (decimalY >= 50)
-        {
-            playerY = Mathf.CeilToInt(playerRawY);
-        }
-        else
-        {
-            playerY = Mathf.FloorToInt(playerRawY);
-        }
-
-
-        // Update the completion tilemap at the rounded player x and y coordinates. 
-        Mow(new Vector3Int(playerX, playerY, DEFAULT_Z));
     }
 
     public void Mow(Vector3Int position)
@@ -77,7 +64,7 @@ public class DetectCompletion : MonoBehaviour
         {
             // Modifies tiles on the mowed grass/completion tilemap. Not visible to the player.
             // Exists mostly for position debugging purposes.
-            // To disable, remove line 79.
+            // To disable, remove the below line.
             completionTilemap.SetTile(position, null);
             mowedTiles++;
         }
