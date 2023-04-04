@@ -10,7 +10,6 @@ public class PopUpScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // controlPanel.SetActive(false);
         
     }
 
@@ -20,13 +19,7 @@ public class PopUpScript : MonoBehaviour
         
     }
 
-    // public void popUpButtonClick() {
-    //     // SceneManager.LoadScene(loadScene);
-    //     controlPanel.SetActive(true);
-    // }
-
-    public void OpenclosePopUp() {
-        // controlPanel.SetActive(false);
+    public void OpenClosePopUp() {
         if (!active) {
             controlPanel.transform.gameObject.SetActive(true);
             active = true;
