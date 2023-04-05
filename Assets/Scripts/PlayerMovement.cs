@@ -13,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float rotationSpeed;
 
+    [SerializeField]
+    private float forceSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,16 +28,15 @@ public class PlayerMovement : MonoBehaviour
         // Defining two variables that get player input (W/S or Up/Down; A/D or Left/Right).
         // WASD or the arrow keys are both acceptable input built into Unity.
         float horizontalInput = Input.GetAxis("Horizontal");
-        float forwardBackInput = Input.GetAxis("Vertical");
-        float mowerSpeed = 1000;
+        float verticalInput = Input.GetAxis("Vertical");
 
         // Creating new Vector2 with the input defined above
-        Vector2 movementDirection = new Vector2(horizontalInput, forwardBackInput);
+        //Vector2 movementDirection = new Vector2(horizontalInput, forwardBackInput);
 
         // Gets magnitude of the movement and 'clamps' its value so that it's between 0 and 1.
         // This value is then normalized so that it's of length 1.
-        float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
-        movementDirection.Normalize();
+        //float inputMagnitude = Mathf.Clamp01(movementDirection.magnitude);
+        //movementDirection.Normalize();
 
         // Moves the lawnmower/player in the direction specified, multiplied by the speed, inputMagnitude, and delta time.
         // We want it to be multiplied by delta time so that it's framerate independent.
@@ -42,8 +44,8 @@ public class PlayerMovement : MonoBehaviour
         
 
         //code partially yoinked from: https://answers.unity.com/questions/785479/how-to-create-an-asteroids-style-moving-in-2d-mode.html
-        transform.Translate(transform.up * Time.deltaTime * speed * Input.GetAxis("Vertical"));
-        //GetComponent<Rigidbody2D>().AddForce(transform.up * Time.deltaTime * Input.GetAxis("Vertical") * mowerSpeed);
+        transform.Translate(new Vector2(0, 1) * Time.deltaTime * speed * Input.GetAxis("Vertical"));
+        //GetComponent<Rigidbody2D>().AddForce(transform.up * Time.deltaTime * Input.GetAxis("Vertical") * forceSpeed);
 
         //code yoinked from: https://gamecodeschool.com/unity/building-asteroids-arcade-game-in-unity/
         transform.Rotate(0, 0, -Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
