@@ -7,7 +7,7 @@ public class PopUpScript : MonoBehaviour
 {
     public GameObject controlPanel;
     public GameObject XButton;
-    bool active;
+    bool active = true;
     // Start is called before the first frame update
     void Start()
     {
