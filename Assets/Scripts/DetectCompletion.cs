@@ -74,7 +74,7 @@ public class DetectCompletion : MonoBehaviour
             completionTilemap.SetTile(position, null);
             mowedTiles++;
 
-            print(mowedTiles);
+            //print(mowedTiles);
         }
     }
 }
