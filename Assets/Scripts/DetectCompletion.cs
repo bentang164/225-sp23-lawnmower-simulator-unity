@@ -6,8 +6,8 @@ public class DetectCompletion : MonoBehaviour
 {
     private GameObject player = null;
     private int mowedTiles = 0;
-    private readonly int THRESHOLD = 378; // Default: 90% of NUM_TILES
-    private readonly int NUM_TILES = 420; // 30x14 tilemap. Eventually should be made a SerializeField and not readonly to account for non-grass stuff (building, fountain, etc.)
+    private readonly int THRESHOLD = 9450; // Default: 90% of NUM_TILES
+    private readonly int NUM_TILES = 10500; // 30x14 tilemap. Eventually should be made a SerializeField and not readonly to account for non-grass stuff (building, fountain, etc.)
     private readonly int DEFAULT_Z = 0;
 
     [SerializeField]
@@ -40,22 +40,28 @@ public class DetectCompletion : MonoBehaviour
         float playerRawX = player.transform.position.x;
         float playerRawY = player.transform.position.y;
 
+        Mow(new Vector3Int((int)playerRawX - 2, (int)playerRawY - 2, DEFAULT_Z));
+        Mow(new Vector3Int((int)playerRawX - 1, (int)playerRawY - 1, DEFAULT_Z));
+        Mow(new Vector3Int((int)playerRawX, (int)playerRawY, DEFAULT_Z));
+        Mow(new Vector3Int((int)playerRawX + 1, (int)playerRawY + 1, DEFAULT_Z));
+        Mow(new Vector3Int((int)playerRawX + 2, (int)playerRawY + 2, DEFAULT_Z));
+
         // Update the completion tilemap at the player's x and y coordinates, based on position.
         // This will NOT WORK if the size of the tilemap is changed from default scale!
-        if (playerRawY < 0 && playerRawX < 0)
-        {
-            Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY - 1, DEFAULT_Z));
-        } else if (playerRawY > 0 && playerRawX < 0)
-        {
-            Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY, DEFAULT_Z));
-        } else if (playerRawY < 0 && playerRawX > 0)
-        {
-            Mow(new Vector3Int((int) playerRawX, (int) playerRawY - 1, DEFAULT_Z));
-        }
-        else
-        {
-            Mow(new Vector3Int((int) playerRawX, (int) playerRawY, DEFAULT_Z));
-        }
+        //if (playerRawY < 0 && playerRawX < 0)
+        //{
+        //    Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY - 1, DEFAULT_Z));
+        //} else if (playerRawY > 0 && playerRawX < 0)
+        //{
+        //    Mow(new Vector3Int((int) playerRawX - 1, (int) playerRawY, DEFAULT_Z));
+        //} else if (playerRawY < 0 && playerRawX > 0)
+        //{
+        //    Mow(new Vector3Int((int) playerRawX, (int) playerRawY - 1, DEFAULT_Z));
+        //}
+        //else
+        //{
+        //    Mow(new Vector3Int((int) playerRawX, (int) playerRawY, DEFAULT_Z));
+        //}
     }
 
     public void Mow(Vector3Int position)
@@ -67,6 +73,8 @@ public class DetectCompletion : MonoBehaviour
             // To disable, remove the below line.
             completionTilemap.SetTile(position, null);
             mowedTiles++;
+
+            print(mowedTiles);
         }
     }
 }
