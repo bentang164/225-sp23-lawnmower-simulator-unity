@@ -112881,7 +112881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotationSpeed: 180
+  rotationSpeed: 78
   forceSpeed: 1500
 --- !u!61 &1752845499
 BoxCollider2D:
@@ -112975,7 +112975,7 @@ TrailRenderer:
   m_Time: 10000
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.5
+    widthMultiplier: 4.75
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -112993,8 +112993,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.04705882, g: 0.93333334, b: 0.22148314, a: 1}
-      key1: {r: 0.04705882, g: 0.93333334, b: 0.22148314, a: 1}
+      key0: {r: 0.049750824, g: 0.84313726, b: 0.1975181, a: 1}
+      key1: {r: 0.049750824, g: 0.84313726, b: 0.1975181, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
