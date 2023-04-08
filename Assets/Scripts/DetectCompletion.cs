@@ -92,7 +92,6 @@ public class DetectCompletion : MonoBehaviour
     {
         if (completionTilemap.GetTile(position) != null)
         {
-            print(position);
             // Modifies tiles on the mowed grass/completion tilemap. Not visible to the player.
             // Exists mostly for position debugging purposes.
             // To disable, remove the below line.
