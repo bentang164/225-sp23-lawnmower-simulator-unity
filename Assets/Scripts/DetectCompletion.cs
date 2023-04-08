@@ -6,12 +6,15 @@ public class DetectCompletion : MonoBehaviour
 {
     private GameObject player = null;
     private int mowedTiles = 0;
-    private readonly int THRESHOLD = 9450; // Default: 90% of NUM_TILES
-    private readonly int NUM_TILES = 10500; // 30x14 tilemap. Eventually should be made a SerializeField and not readonly to account for non-grass stuff (building, fountain, etc.)
+    
+    private int NUM_TILES = 10500; // 150x70 tilemap.
     private readonly int DEFAULT_Z = 0;
 
     [SerializeField]
     private Tilemap completionTilemap;
+
+    [SerializeField]
+    private int threshold; // Default: 90% of NUM_TILES, 8650 for level 2
 
     //Start is called before the first frame update
     void Start()
@@ -25,13 +28,7 @@ public class DetectCompletion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // If the player has mowed enough tiles, stop everything
-        // Another way we could do this is with a proportion/percentage:
-            // Let THRESHOLD/NUM_TILES be the percentage the player needs to mow, visible to the player as "Target"
-            // Include an overall percentage in the level: mowedTiles/NUM_TILES, visible to the player as "Progress"
-            // Should the level immediately end when the threshold is hit, or allow the player to continue mowing until time runs out?
-            // We can also scale the difficulty by making THRESHOLD a SerializeField that can be modified from within the Unity Editor.
-        if (mowedTiles >= THRESHOLD)
+        if (mowedTiles >= threshold)
         {
             print("Completion threshold exceeded");
         }

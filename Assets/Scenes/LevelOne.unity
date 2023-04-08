@@ -170,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completionTilemap: {fileID: 200928935}
+  threshold: 9450
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
