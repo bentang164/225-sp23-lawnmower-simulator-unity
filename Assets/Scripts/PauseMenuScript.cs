@@ -24,12 +24,17 @@ public class PauseMenuScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
-            Time.timeScale = 0f;
-            if (controlPanel.activeSelf && XButton.activeSelf) {
-                controlPanel.SetActive(!controlPanel.activeSelf);
-                XButton.SetActive(!XButton.activeSelf);
-                active = false;
+            if (pauseMenu.activeSelf) {
+                Time.timeScale = 0f;
+                if (controlPanel.activeSelf && XButton.activeSelf) {
+                    controlPanel.SetActive(!controlPanel.activeSelf);
+                    XButton.SetActive(!XButton.activeSelf);
+                    active = false;
+                }
+            } else {
+                Time.timeScale = 1f;
             }
+
         }
     }
 
