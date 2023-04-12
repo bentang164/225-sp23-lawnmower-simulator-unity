@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectScript : MonoBehaviour
 {
-    //public string pickLevel;
     // Start is called before the first frame update
     void Start()
     {
