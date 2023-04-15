@@ -1,9 +1,11 @@
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class DetectCompletion : MonoBehaviour
 {
+    public string nextScene;
     private GameObject player = null;
     private int mowedTiles = 0;
     
@@ -31,6 +33,8 @@ public class DetectCompletion : MonoBehaviour
         if (mowedTiles >= threshold)
         {
             print("Completion threshold exceeded");
+            SceneManager.LoadScene(nextScene);
+
         }
 
         // Pull raw x and y coordinates for the player's position

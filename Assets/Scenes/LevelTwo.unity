@@ -1273,6 +1273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f93096dc4db4a62837a73f8855ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextScene: EndGameScene
   completionTilemap: {fileID: 200928935}
   threshold: 9450
 --- !u!483693784 &200928934

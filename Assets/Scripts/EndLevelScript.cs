@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScreenScript : MonoBehaviour
+public class EndLevelScript : MonoBehaviour
 {
-    public string playGame;
+    public string level;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +16,11 @@ public class TitleScreenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
 
-    public void playButton() {
-        SceneManager.LoadScene(playGame);
+    public void nextScene() {
+        SceneManager.LoadScene(level);
     }
 
-    public void quitButton() {
-        Application.Quit();
-    }
 }
