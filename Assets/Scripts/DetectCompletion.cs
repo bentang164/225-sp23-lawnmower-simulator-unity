@@ -8,6 +8,8 @@ public class DetectCompletion : MonoBehaviour
     public string nextScene;
     private GameObject player = null;
     private int mowedTiles = 0;
+    private bool levelComplete;
+    public GameObject endLevelButton;
     
     private int NUM_TILES = 11200; // 160x70 tilemap.
     private readonly int DEFAULT_Z = 0;
@@ -21,6 +23,9 @@ public class DetectCompletion : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
+        endLevelButton.SetActive(false);
+        levelComplete = false;
+
         if (player == null)
         {
             player = GameObject.Find("Player");
@@ -32,8 +37,12 @@ public class DetectCompletion : MonoBehaviour
     {
         if (mowedTiles >= threshold)
         {
+            levelComplete = true;
+            if (levelComplete) {
+                endLevelButton.SetActive(true);
+            }
             print("Completion threshold exceeded");
-            SceneManager.LoadScene(nextScene);
+            
 
         }
 
@@ -46,6 +55,12 @@ public class DetectCompletion : MonoBehaviour
                 Mow(new Vector3Int(Mathf.RoundToInt(playerRawX - 2 + i), Mathf.RoundToInt(playerRawY - 2 + j), DEFAULT_Z));
             }
         }
+    }
+
+    public void completeLevel() {
+        SceneManager.LoadScene(nextScene);
+        levelComplete = false;
+        endLevelButton.SetActive(false);
     }
 
     public void Mow(Vector3Int position)

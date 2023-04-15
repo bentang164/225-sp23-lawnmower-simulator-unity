@@ -8,13 +8,10 @@ public class PlayerMovement : MonoBehaviour
 {
     // We need the SerializeField tag so that these fields become visible in the Unity Inspector
     [SerializeField]
-    private float speed;
-
-    [SerializeField]
     private float rotationSpeed;
 
     [SerializeField]
-    private float forceSpeed; //??? Rename variable cuz we talked about how it was confusing
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
         //code partially yoinked from: https://answers.unity.com/questions/785479/how-to-create-an-asteroids-style-moving-in-2d-mode.html
         //transform.Translate(new Vector2(0, 1) * Time.deltaTime * speed * Input.GetAxis("Vertical"));
-        GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, 1) * Time.deltaTime * Input.GetAxis("Vertical") * forceSpeed);
+        GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, 1) * Time.deltaTime * Input.GetAxis("Vertical") * speed);
 
         //decelerates mower quicker to simulate the operator stopping it
         if (Input.GetAxis("Vertical") == 0 && GetComponent<Rigidbody2D>().velocity != null) 
