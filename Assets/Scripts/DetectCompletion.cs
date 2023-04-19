@@ -58,6 +58,7 @@ public class DetectCompletion : MonoBehaviour
     }
 
     public void completeLevel() {
+        GameObject.Find("Timer").GetComponent<TimerFunction>().SetBestTime();
         SceneManager.LoadScene(nextScene);
         levelComplete = false;
         endLevelButton.SetActive(false);
