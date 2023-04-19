@@ -99312,6 +99312,134 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &216307963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216307965}
+  - component: {fileID: 216307964}
+  m_Layer: 0
+  m_Name: AmbientSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &216307964
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216307963}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d5d0dbdcf47aa47869fe6cb18c47ab37, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &216307965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216307963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &328703178
 GameObject:
   m_ObjectHideFlags: 0
@@ -99462,6 +99590,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 328703178}
   m_CullTransparentMesh: 1
+--- !u!1 &407293859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 407293861}
+  - component: {fileID: 407293860}
+  m_Layer: 0
+  m_Name: IdleSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &407293860
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407293859}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f1d51dd6c2bf648c7b01c2362ca3e9b9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &407293861
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407293859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -99474,6 +99730,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -99488,7 +99745,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99576,10 +99833,29 @@ Transform:
   m_LocalPosition: {x: 39.8, y: -14.9, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 216307965}
+  - {fileID: 881547936}
+  - {fileID: 407293861}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e8931d7422fe47f2a03104af1f2a2a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFX:
+  - {fileID: 216307964}
+  - {fileID: 881547935}
+  - {fileID: 407293860}
 --- !u!1 &576140631
 GameObject:
   m_ObjectHideFlags: 0
@@ -100903,6 +101179,134 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799652316}
   m_CullTransparentMesh: 1
+--- !u!1 &881547934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 881547936}
+  - component: {fileID: 881547935}
+  m_Layer: 0
+  m_Name: MowingSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &881547935
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881547934}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b09bfc393e99a4303a9eafb7c55dfdc6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &881547936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881547934}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 519420032}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898058972
 GameObject:
   m_ObjectHideFlags: 0
@@ -102478,248 +102882,232 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1425796518}
     m_ColliderPaths:
-    - - X: 149839456
-        Y: 299678944
-      - X: -149839456
-        Y: 299678944
-      - X: -149839456
-        Y: 249732464
-      - X: 149839456
-        Y: 249732464
-    - - X: -149839472
-        Y: 299678944
-      - X: -249732432
-        Y: 299678944
-      - X: -249732432
-        Y: 249732464
-      - X: -149839472
-        Y: 249732464
-    - - X: -249732464
-        Y: 299678944
-      - X: -399571904
-        Y: 299678944
-      - X: -399571904
-        Y: 249732464
-      - X: -249732464
-        Y: 249732464
-    - - X: 1198715776
-        Y: 299678944
-      - X: 1098822784
-        Y: 299678944
-      - X: 1098822784
-        Y: 249732464
-      - X: 1198715776
-        Y: 249732464
-    - - X: 1098822656
-        Y: 299678944
-      - X: 998929856
-        Y: 299678944
-      - X: 998929856
-        Y: 249732464
-      - X: 1098822656
-        Y: 249732464
-    - - X: 998929728
-        Y: 299678944
-      - X: 899036864
-        Y: 299678944
-      - X: 899036864
-        Y: 249732464
-      - X: 998929728
-        Y: 249732464
-    - - X: 899036800
-        Y: 299678944
-      - X: 849090368
-        Y: 299678944
-      - X: 849090368
-        Y: 249732464
-      - X: 899036800
-        Y: 249732464
-    - - X: 849090240
-        Y: 299678944
-      - X: 749197376
-        Y: 299678944
-      - X: 749197376
-        Y: 249732464
-      - X: 849090240
-        Y: 249732464
-    - - X: 749197312
-        Y: 299678944
-      - X: 699250880
-        Y: 299678944
-      - X: 699250880
-        Y: 249732464
-      - X: 749197312
-        Y: 249732464
-    - - X: 699250816
-        Y: 299678944
-      - X: 249732464
-        Y: 299678944
-      - X: 249732464
-        Y: 249732464
-      - X: 699250816
-        Y: 249732464
-    - - X: 249732432
-        Y: 299678944
-      - X: 149839472
-        Y: 299678944
-      - X: 149839472
-        Y: 249732464
-      - X: 249732432
-        Y: 249732464
-    - - X: -349625408
-        Y: 249732432
-      - X: -399571904
-        Y: 249732432
-      - X: -399571904
-        Y: 149839472
-      - X: -349625408
-        Y: 149839472
-    - - X: 1198715776
-        Y: 249732432
-      - X: 1148769280
-        Y: 249732432
-      - X: 1148769280
-        Y: 149839472
-      - X: 1198715776
-        Y: 149839472
-    - - X: -349625408
-        Y: 149839456
-      - X: -399571904
-        Y: 149839456
-      - X: -399571904
-        Y: -149839456
-      - X: -349625408
-        Y: -149839456
-    - - X: 1198715776
-        Y: 149839456
-      - X: 1148769280
-        Y: 149839456
-      - X: 1148769280
-        Y: -149839456
-      - X: 1198715776
-        Y: -149839456
-    - - X: 1198715776
-        Y: -149839472
-      - X: 1148769280
-        Y: -149839472
-      - X: 1148769280
-        Y: -249732432
-      - X: 1198715776
-        Y: -249732432
-    - - X: -349625408
-        Y: -149839472
-      - X: -399571904
-        Y: -149839472
-      - X: -399571904
-        Y: -249732432
-      - X: -349625408
-        Y: -249732432
-    - - X: 1198715776
-        Y: -249732464
-      - X: 1148769280
-        Y: -249732464
-      - X: 1148769280
-        Y: -549411328
-      - X: 1098822784
-        Y: -549411328
-      - X: 1098822784
-        Y: -599357888
-      - X: 1198715776
-        Y: -599357888
-    - - X: -249732464
-        Y: -549411328
-      - X: -349625408
-        Y: -549411328
-      - X: -349625408
-        Y: -249732464
-      - X: -399571904
-        Y: -249732464
-      - X: -399571904
-        Y: -599357888
-      - X: -249732464
-        Y: -599357888
-    - - X: 849090240
-        Y: -549411328
-      - X: 749197376
-        Y: -549411328
-      - X: 749197376
-        Y: -599357888
-      - X: 849090240
-        Y: -599357888
-    - - X: 749197312
-        Y: -549411328
-      - X: 699250880
-        Y: -549411328
-      - X: 699250880
-        Y: -599357888
-      - X: 749197312
-        Y: -599357888
-    - - X: 699250816
-        Y: -549411328
-      - X: 249732464
-        Y: -549411328
-      - X: 249732464
-        Y: -599357888
-      - X: 699250816
-        Y: -599357888
-    - - X: 249732432
-        Y: -549411328
-      - X: 149839472
-        Y: -549411328
-      - X: 149839472
-        Y: -599357888
-      - X: 249732432
-        Y: -599357888
-    - - X: 149839456
-        Y: -549411328
-      - X: -149839456
-        Y: -549411328
-      - X: -149839456
-        Y: -599357888
-      - X: 149839456
-        Y: -599357888
-    - - X: 1098822656
-        Y: -549411328
-      - X: 998929856
-        Y: -549411328
-      - X: 998929856
-        Y: -599357888
-      - X: 1098822656
-        Y: -599357888
-    - - X: 998929728
-        Y: -549411328
-      - X: 899036864
-        Y: -549411328
-      - X: 899036864
-        Y: -599357888
-      - X: 998929728
-        Y: -599357888
-    - - X: 899036800
-        Y: -549411328
-      - X: 849090368
-        Y: -549411328
-      - X: 849090368
-        Y: -599357888
-      - X: 899036800
-        Y: -599357888
-    - - X: -149839472
-        Y: -549411328
-      - X: -249732432
-        Y: -549411328
-      - X: -249732432
-        Y: -599357888
-      - X: -149839472
-        Y: -599357888
+    - - X: 249709568
+        Y: 299651488
+      - X: -249709568
+        Y: 299651488
+      - X: -249709568
+        Y: 249709584
+      - X: 249709568
+        Y: 249709584
+    - - X: -249709584
+        Y: 299651488
+      - X: -299651488
+        Y: 299651488
+      - X: -299651488
+        Y: 249709584
+      - X: -249709584
+        Y: 249709584
+    - - X: -299651520
+        Y: 299651488
+      - X: -399535328
+        Y: 299651488
+      - X: -399535328
+        Y: 249709584
+      - X: -299651520
+        Y: 249709584
+    - - X: 1198605952
+        Y: 299651488
+      - X: 1048780288
+        Y: 299651488
+      - X: 1048780288
+        Y: 249709584
+      - X: 1198605952
+        Y: 249709584
+    - - X: 1048780224
+        Y: 299651488
+      - X: 998838336
+        Y: 299651488
+      - X: 998838336
+        Y: 249709584
+      - X: 1048780224
+        Y: 249709584
+    - - X: 998838272
+        Y: 299651488
+      - X: 898954560
+        Y: 299651488
+      - X: 898954560
+        Y: 249709584
+      - X: 998838272
+        Y: 249709584
+    - - X: 898954496
+        Y: 299651488
+      - X: 849012608
+        Y: 299651488
+      - X: 849012608
+        Y: 249709584
+      - X: 898954496
+        Y: 249709584
+    - - X: 849012544
+        Y: 299651488
+      - X: 749128768
+        Y: 299651488
+      - X: 749128768
+        Y: 249709584
+      - X: 849012544
+        Y: 249709584
+    - - X: 749128704
+        Y: 299651488
+      - X: 699186880
+        Y: 299651488
+      - X: 699186880
+        Y: 249709584
+      - X: 749128704
+        Y: 249709584
+    - - X: 699186752
+        Y: 299651488
+      - X: 299651520
+        Y: 299651488
+      - X: 299651520
+        Y: 249709584
+      - X: 699186752
+        Y: 249709584
+    - - X: 299651488
+        Y: 299651488
+      - X: 249709584
+        Y: 299651488
+      - X: 249709584
+        Y: 249709584
+      - X: 299651488
+        Y: 249709584
+    - - X: -349593376
+        Y: 249709568
+      - X: -399535328
+        Y: 249709568
+      - X: -399535328
+        Y: -249709568
+      - X: -349593376
+        Y: -249709568
+    - - X: 1198605952
+        Y: 249709568
+      - X: 1148664064
+        Y: 249709568
+      - X: 1148664064
+        Y: -249709568
+      - X: 1198605952
+        Y: -249709568
+    - - X: 1198605952
+        Y: -249709584
+      - X: 1148664064
+        Y: -249709584
+      - X: 1148664064
+        Y: -299651488
+      - X: 1198605952
+        Y: -299651488
+    - - X: -349593376
+        Y: -249709584
+      - X: -399535328
+        Y: -249709584
+      - X: -399535328
+        Y: -299651488
+      - X: -349593376
+        Y: -299651488
+    - - X: 1198605952
+        Y: -299651520
+      - X: 1148664064
+        Y: -299651520
+      - X: 1148664064
+        Y: -549361088
+      - X: 1048780288
+        Y: -549361088
+      - X: 1048780288
+        Y: -599303040
+      - X: 1198605952
+        Y: -599303040
+    - - X: -299651520
+        Y: -549361088
+      - X: -349593376
+        Y: -549361088
+      - X: -349593376
+        Y: -299651520
+      - X: -399535328
+        Y: -299651520
+      - X: -399535328
+        Y: -599303040
+      - X: -299651520
+        Y: -599303040
+    - - X: 749128704
+        Y: -549361088
+      - X: 699186880
+        Y: -549361088
+      - X: 699186880
+        Y: -599303040
+      - X: 749128704
+        Y: -599303040
+    - - X: 699186752
+        Y: -549361088
+      - X: 299651520
+        Y: -549361088
+      - X: 299651520
+        Y: -599303040
+      - X: 699186752
+        Y: -599303040
+    - - X: 299651488
+        Y: -549361088
+      - X: 249709584
+        Y: -549361088
+      - X: 249709584
+        Y: -599303040
+      - X: 299651488
+        Y: -599303040
+    - - X: 249709568
+        Y: -549361088
+      - X: -249709568
+        Y: -549361088
+      - X: -249709568
+        Y: -599303040
+      - X: 249709568
+        Y: -599303040
+    - - X: 1048780224
+        Y: -549361088
+      - X: 998838336
+        Y: -549361088
+      - X: 998838336
+        Y: -599303040
+      - X: 1048780224
+        Y: -599303040
+    - - X: 998838272
+        Y: -549361088
+      - X: 898954560
+        Y: -549361088
+      - X: 898954560
+        Y: -599303040
+      - X: 998838272
+        Y: -599303040
+    - - X: 898954496
+        Y: -549361088
+      - X: 849012608
+        Y: -549361088
+      - X: 849012608
+        Y: -599303040
+      - X: 898954496
+        Y: -599303040
+    - - X: 849012544
+        Y: -549361088
+      - X: 749128768
+        Y: -549361088
+      - X: 749128768
+        Y: -599303040
+      - X: 849012544
+        Y: -599303040
+    - - X: -249709584
+        Y: -549361088
+      - X: -299651488
+        Y: -549361088
+      - X: -299651488
+        Y: -599303040
+      - X: -249709584
+        Y: -599303040
   m_CompositePaths:
     m_Paths:
-    - - {x: 119.87155, y: -59.93579}
-      - {x: 119.87155, y: 29.967896}
-      - {x: -39.95719, y: 29.967867}
-      - {x: -39.95716, y: -59.93579}
-    - - {x: 114.87693, y: -54.9411}
-      - {x: -34.96254, y: -54.9411}
-      - {x: -34.962513, y: 24.973248}
-      - {x: 114.87693, y: 24.973217}
+    - - {x: 119.86057, y: -59.930305}
+      - {x: 119.86057, y: 29.965149}
+      - {x: -39.953533, y: 29.96512}
+      - {x: -39.953503, y: -59.930305}
+    - - {x: 114.86641, y: -54.936077}
+      - {x: -34.95934, y: -54.936077}
+      - {x: -34.95931, y: 24.970959}
+      - {x: 114.86641, y: 24.97093}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1425796517
