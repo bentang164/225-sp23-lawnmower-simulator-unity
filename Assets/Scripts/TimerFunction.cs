@@ -31,4 +31,10 @@ public class TimerFunction : MonoBehaviour
             Debug.Log("" + (int)bestTime);
         }
     }
+
+    public float GetBestTime()
+    {
+        float temp = bestTime;
+        return temp;
+    }
 }
