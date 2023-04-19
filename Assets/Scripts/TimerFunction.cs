@@ -8,6 +8,7 @@ public class TimerFunction : MonoBehaviour
     private float timeValue;
     private float startTime;
     private float bestTime;
+    private float prevBestTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +28,7 @@ public class TimerFunction : MonoBehaviour
     {
         if(bestTime == 0 || bestTime > timeValue - startTime)
         {
+            prevBestTime = bestTime;
             bestTime = timeValue;
             Debug.Log("" + (int)bestTime);
         }
@@ -35,6 +37,12 @@ public class TimerFunction : MonoBehaviour
     public float GetBestTime()
     {
         float temp = bestTime;
+        return temp;
+    }
+
+    public float GetPrevBestTime()
+    {
+        float temp = prevBestTime;
         return temp;
     }
 }
