@@ -26,8 +26,15 @@ public class EndLevelScript : MonoBehaviour
 
     public void changeBestText()
     {
-        GameObject.Find("PrevBestText").GetComponent<TMP_Text>().SetText("Previous Best: " + (int) TimerFunction.LevelOnePrevBestTime);
-        GameObject.Find("NewBestText").GetComponent<TMP_Text>().SetText("New Best: " + (int) TimerFunction.LevelOneBestTime);
+        if (DataTracker.CurrentLevelName.Equals("LevelOne"))
+        {
+            GameObject.Find("PrevBestText").GetComponent<TMP_Text>().SetText("Previous Best: " + (int)DataTracker.LevelOnePrevBestTime);
+            GameObject.Find("NewBestText").GetComponent<TMP_Text>().SetText("New Best: " + (int)DataTracker.LevelOneBestTime);
+        } else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
+        {
+            GameObject.Find("PrevBestText").GetComponent<TMP_Text>().SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
+            GameObject.Find("NewBestText").GetComponent<TMP_Text>().SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
+        }
     }
 
 }

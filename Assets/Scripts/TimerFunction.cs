@@ -7,13 +7,6 @@ public class TimerFunction : MonoBehaviour
 {
     private float timeValue;
     private float startTime;
-    private float bestTime = 0;
-    private float prevBestTime;
-    public static float LevelOnePrevBestTime = 0;
-    public static float LevelTwoPrevBestTime = 0;
-
-    public static float LevelOneBestTime = 0;
-    public static float LevelTwoBestTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,42 +22,28 @@ public class TimerFunction : MonoBehaviour
         GetComponent<TMP_Text>().text = "" + (int) timeValue;
     }
 
-    public void SetBestTime(string level)
+    public void SetBestTime()
     {
-        if(bestTime == 0 || bestTime > timeValue - startTime)
+        string level = DataTracker.CurrentLevelName;
+        if (level.Equals("LevelOne"))
         {
-            if (level.Equals("LevelOne"))
+            if (DataTracker.LevelOneBestTime == 0 || DataTracker.LevelOneBestTime > timeValue)
             {
-                LevelOnePrevBestTime = bestTime;
-                prevBestTime = bestTime;
-
-                LevelOneBestTime = timeValue;
-                bestTime = timeValue;
-            } else if(level.Equals("LevelTwo"))
+                DataTracker.LevelOnePrevBestTime = DataTracker.LevelOneBestTime;
+                DataTracker.LevelOneBestTime = timeValue;
+            }  
+              
+        } else if(level.Equals("LevelTwo"))
+        {
+            if (DataTracker.LevelTwoBestTime == 0 || DataTracker.LevelTwoBestTime > timeValue)
             {
-                LevelTwoPrevBestTime = bestTime;
-                prevBestTime = bestTime;
-
-                LevelTwoBestTime = timeValue;
-                bestTime = timeValue;
+                DataTracker.LevelTwoPrevBestTime = DataTracker.LevelTwoBestTime;
+                DataTracker.LevelTwoBestTime = timeValue;
             }
-
-            Debug.Log("" + (int)bestTime);
+            
         }
 
-       
-
+        //Debug.Log("" + (int)LevelOneBestTime);
     }
 
-    public float GetBestTime()
-    {
-        float temp = bestTime;
-        return temp;
-    }
-
-    public float GetPrevBestTime()
-    {
-        float temp = prevBestTime;
-        return temp;
-    }
 }

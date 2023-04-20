@@ -10,8 +10,6 @@ public class DetectCompletion : MonoBehaviour
     private int mowedTiles = 0;
     private bool levelComplete;
     public GameObject endLevelButton;
-
-    public static Scene prevScene;
     
     private int NUM_TILES = 11200; // 160x70 tilemap.
     private readonly int DEFAULT_Z = 0;
@@ -25,8 +23,8 @@ public class DetectCompletion : MonoBehaviour
     //Start is called before the first frame update
     void Start()
     {
-        prevScene = SceneManager.GetActiveScene();
-
+        DataTracker.CurrentLevelName = SceneManager.GetActiveScene().name;
+       
         endLevelButton.SetActive(false);
         levelComplete = false;
 
@@ -62,7 +60,7 @@ public class DetectCompletion : MonoBehaviour
     }
 
     public void completeLevel() {
-        GameObject.Find("Timer").GetComponent<TimerFunction>().SetBestTime(SceneManager.GetActiveScene().name);
+        GameObject.Find("Timer").GetComponent<TimerFunction>().SetBestTime();
         SceneManager.LoadScene(nextScene);
         levelComplete = false;
         endLevelButton.SetActive(false);
