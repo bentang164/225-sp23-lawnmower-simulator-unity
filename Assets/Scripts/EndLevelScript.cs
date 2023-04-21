@@ -7,13 +7,15 @@ using TMPro;
 public class EndLevelScript : MonoBehaviour
 {
     public string level;
-    TMP_Text prevBestText = GameObject.Find("PrevBestText").GetComponent<TMP_Text>();
-    TMP_Text bestText = GameObject.Find("NewBestText").GetComponent<TMP_Text>();
+    TMP_Text prevBestText;
+    TMP_Text bestText;
 
     // Start is called before the first frame update
     void Start()
     {
-        changeBestText();
+        prevBestText = GameObject.Find("PrevBestText").GetComponent<TMP_Text>();
+        bestText = GameObject.Find("NewBestText").GetComponent<TMP_Text>();
+        changeBestText(DataTracker.NewBestBool);
     }
 
     // Update is called once per frame
