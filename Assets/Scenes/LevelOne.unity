@@ -1196,7 +1196,7 @@ MonoBehaviour:
   nextScene: EndGameScene
   endLevelButton: {fileID: 1998192609}
   completionTilemap: {fileID: 200928935}
-  threshold: 150
+  threshold: 9450
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -107204,7 +107204,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -109506,7 +109506,7 @@ ParticleSystem:
       m_Bits: 4294967295
     influenceList: []
   ClampVelocityModule:
-    enabled: 0
+    enabled: 1
     x:
       serializedVersion: 2
       minMaxState: 0
@@ -109727,7 +109727,7 @@ ParticleSystem:
     drag:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.4
       minScalar: 0
       maxCurve:
         serializedVersion: 2
