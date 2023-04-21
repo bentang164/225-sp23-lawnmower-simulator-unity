@@ -1196,7 +1196,7 @@ MonoBehaviour:
   nextScene: EndGameScene
   endLevelButton: {fileID: 1998192609}
   completionTilemap: {fileID: 200928935}
-  threshold: 9450
+  threshold: 300
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
