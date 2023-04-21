@@ -39,6 +39,7 @@ public class DetectCompletion : MonoBehaviour
     {
         if (mowedTiles >= threshold)
         {
+            GameObject.Find("Timer").GetComponent<TimerFunction>().StopCounting();
             levelComplete = true;
             if (levelComplete) {
                 endLevelButton.SetActive(true);
