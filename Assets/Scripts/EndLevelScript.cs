@@ -7,7 +7,9 @@ using TMPro;
 public class EndLevelScript : MonoBehaviour
 {
     public string level;
-    
+    TMP_Text prevBestText = GameObject.Find("PrevBestText").GetComponent<TMP_Text>();
+    TMP_Text bestText = GameObject.Find("NewBestText").GetComponent<TMP_Text>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +30,12 @@ public class EndLevelScript : MonoBehaviour
     {
         if (DataTracker.CurrentLevelName.Equals("LevelOne"))
         {
-            GameObject.Find("PrevBestText").GetComponent<TMP_Text>().SetText("Previous Best: " + (int)DataTracker.LevelOnePrevBestTime);
-            GameObject.Find("NewBestText").GetComponent<TMP_Text>().SetText("New Best: " + (int)DataTracker.LevelOneBestTime);
+            prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelOnePrevBestTime);
+            bestText.SetText("New Best: " + (int)DataTracker.LevelOneBestTime);
         } else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
         {
-            GameObject.Find("PrevBestText").GetComponent<TMP_Text>().SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
-            GameObject.Find("NewBestText").GetComponent<TMP_Text>().SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
+            prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
+            bestText.SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
         }
     }
 
