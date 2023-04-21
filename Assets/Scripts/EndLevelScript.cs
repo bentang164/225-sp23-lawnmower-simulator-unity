@@ -44,14 +44,14 @@ public class EndLevelScript : MonoBehaviour
             }
         } else
         {
-            prevBestText.SetText("");
+            bestText.SetText("");
             if (DataTracker.CurrentLevelName.Equals("LevelOne"))
             {  
-                bestText.SetText("Current Best: " + (int)DataTracker.LevelOneBestTime);
+                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelOneBestTime);
             }
             else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
             {
-                bestText.SetText("Current Best: " + (int)DataTracker.LevelTwoBestTime);
+                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelTwoBestTime);
             }
         }
     }
