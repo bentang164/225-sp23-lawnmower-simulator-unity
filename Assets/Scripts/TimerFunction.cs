@@ -36,6 +36,10 @@ public class TimerFunction : MonoBehaviour
             {
                 DataTracker.LevelOnePrevBestTime = DataTracker.LevelOneBestTime;
                 DataTracker.LevelOneBestTime = timeValue;
+                DataTracker.NewBestBool = true;
+            } else
+            {
+                DataTracker.NewBestBool = false;
             }
 
         }
@@ -45,6 +49,10 @@ public class TimerFunction : MonoBehaviour
             {
                 DataTracker.LevelTwoPrevBestTime = DataTracker.LevelTwoBestTime;
                 DataTracker.LevelTwoBestTime = timeValue;
+                DataTracker.NewBestBool = true;
+            } else
+            {
+                DataTracker.NewBestBool = false;
             }
 
         }

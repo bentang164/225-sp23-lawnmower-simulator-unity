@@ -11,4 +11,6 @@ public static class DataTracker
 
     public static float LevelOneBestTime = 0;
     public static float LevelTwoBestTime = 0;
+
+    public static bool NewBestBool = false;
 }

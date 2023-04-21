@@ -28,16 +28,31 @@ public class EndLevelScript : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
-    public void changeBestText()
+    public void changeBestText(bool NewBestBool)
     {
-        if (DataTracker.CurrentLevelName.Equals("LevelOne"))
+        if (NewBestBool)
         {
-            prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelOnePrevBestTime);
-            bestText.SetText("New Best: " + (int)DataTracker.LevelOneBestTime);
-        } else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
+            if (DataTracker.CurrentLevelName.Equals("LevelOne"))
+            {
+                prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelOnePrevBestTime);
+                bestText.SetText("New Best: " + (int)DataTracker.LevelOneBestTime);
+            }
+            else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
+            {
+                prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
+                bestText.SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
+            }
+        } else
         {
-            prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
-            bestText.SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
+            prevBestText.SetText("");
+            if (DataTracker.CurrentLevelName.Equals("LevelOne"))
+            {  
+                bestText.SetText("Current Best: " + (int)DataTracker.LevelOneBestTime);
+            }
+            else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
+            {
+                bestText.SetText("Current Best: " + (int)DataTracker.LevelTwoBestTime);
+            }
         }
     }
 
