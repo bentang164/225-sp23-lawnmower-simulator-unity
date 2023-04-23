@@ -53,6 +53,10 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(home);
     }
 
+    // public bool ActiveState() {
+    //     return pauseMenu.activeSelf;
+    // }
+
 
     public void OpenClosePopUp() {
         if (!active) {

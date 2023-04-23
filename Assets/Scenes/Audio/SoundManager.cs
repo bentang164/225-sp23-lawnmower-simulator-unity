@@ -4,34 +4,30 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
+        // Ambient sounds
         soundFX[0].Play();
         soundFX[2].Play();
     }
 
-    public AudioSource[] soundFX;
 
-    // Update is called once per frame
+    // Array that holds sound tracks
+    public AudioSource[] soundFX;
+    //public PauseMenuScript pauseMenuScript1;
+
     void Update()
     {
-        // Player input via arrow keys or wasd
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-
+        // If arrow keys are being pressed
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) 
         {
-           
             soundFX[2].Stop();
             
             if(!soundFX[1].isPlaying) 
             {
                 soundFX[1].Play();
             }
-            
         }
-
         else 
         {
             soundFX[1].Stop();
@@ -41,5 +37,12 @@ public class SoundManager : MonoBehaviour
                 soundFX[2].Play();
             }
         }
+
+
+        // if (pauseMenuScript1.GetComponent<pauseMenuScript1>().ActiveState() == true) {
+        //     soundFX[0].Stop();
+        //     soundFX[1].Stop();
+        //     soundFX[2].Stop();
+        // }
     }
 }
