@@ -25,4 +25,14 @@ public class LevelSelectScript : MonoBehaviour
     {
         SceneManager.LoadScene("LevelTwo");
     }
+
+    public void Level3Button()
+    {
+        SceneManager.LoadScene("LevelThree");
+    }
+
+    public void Level4Button()
+    {
+        SceneManager.LoadScene("LevelFour");
+    }
 }
