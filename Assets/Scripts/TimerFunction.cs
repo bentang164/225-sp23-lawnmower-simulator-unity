@@ -23,7 +23,7 @@ public class TimerFunction : MonoBehaviour
         if (!stopCounting)
         {
             timeValue = Time.time - startTime;
-            GetComponent<TMP_Text>().text = "Time: " + (int)timeValue;
+            GetComponent<TMP_Text>().text = "" + (int)timeValue;
         }
     }
 
