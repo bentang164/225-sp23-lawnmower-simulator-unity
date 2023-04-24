@@ -11,14 +11,14 @@ public class DetectCompletion : MonoBehaviour
     private bool levelComplete;
     public GameObject endLevelButton;
     
-    private int NUM_TILES = 11200; // 160x70 tilemap.
+    private int NUM_TILES = 7000; // 20x14 tilemap.
     private readonly int DEFAULT_Z = 0;
 
     [SerializeField]
     private Tilemap completionTilemap;
 
     [SerializeField]
-    private int threshold; // Default: 90% of NUM_TILES, 8415 for level 2, 
+    private int threshold; // Default: 90% of NUM_TILES
 
     //Start is called before the first frame update
     void Start()
