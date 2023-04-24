@@ -42,6 +42,16 @@ public class EndLevelScript : MonoBehaviour
                 prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelTwoPrevBestTime);
                 bestText.SetText("New Best: " + (int)DataTracker.LevelTwoBestTime);
             }
+            else if (DataTracker.CurrentLevelName.Equals("LevelThree"))
+            {
+                prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelThreePrevBestTime);
+                bestText.SetText("New Best: " + (int)DataTracker.LevelThreeBestTime);
+            }
+            else if (DataTracker.CurrentLevelName.Equals("LevelFour"))
+            {
+                prevBestText.SetText("Previous Best: " + (int)DataTracker.LevelFourPrevBestTime);
+                bestText.SetText("New Best: " + (int)DataTracker.LevelFourBestTime);
+            }
         } else
         {
             bestText.SetText("");
@@ -51,7 +61,15 @@ public class EndLevelScript : MonoBehaviour
             }
             else if (DataTracker.CurrentLevelName.Equals("LevelTwo"))
             {
-                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelTwoBestTime);
+                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelThreeBestTime);
+            }
+            else if (DataTracker.CurrentLevelName.Equals("LevelThree"))
+            {
+                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelThreeBestTime);
+            }
+            else if (DataTracker.CurrentLevelName.Equals("LevelFour"))
+            {
+                prevBestText.SetText("Current Best: " + (int)DataTracker.LevelFourBestTime);
             }
         }
     }

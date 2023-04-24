@@ -55,6 +55,34 @@ public class TimerFunction : MonoBehaviour
                 DataTracker.NewBestBool = false;
             }
 
+        } 
+        else if (level.Equals("LevelThree"))
+        {
+            if (DataTracker.LevelThreeBestTime == 0 || DataTracker.LevelThreeBestTime > timeValue)
+            {
+                DataTracker.LevelThreePrevBestTime = DataTracker.LevelThreeBestTime;
+                DataTracker.LevelThreeBestTime = timeValue;
+                DataTracker.NewBestBool = true;
+            }
+            else
+            {
+                DataTracker.NewBestBool = false;
+            }
+
+        }
+        else if (level.Equals("LevelFour"))
+        {
+            if (DataTracker.LevelFourBestTime == 0 || DataTracker.LevelFourBestTime > timeValue)
+            {
+                DataTracker.LevelFourPrevBestTime = DataTracker.LevelFourBestTime;
+                DataTracker.LevelFourBestTime = timeValue;
+                DataTracker.NewBestBool = true;
+            }
+            else
+            {
+                DataTracker.NewBestBool = false;
+            }
+
         }
         //Debug.Log("" + (int)LevelOneBestTime);
     }
