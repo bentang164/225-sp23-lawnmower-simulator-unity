@@ -63588,7 +63588,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 200928933}
         m_TargetAssemblyTypeName: DetectCompletion, Assembly-CSharp
         m_MethodName: completeLevel
         m_Mode: 1
