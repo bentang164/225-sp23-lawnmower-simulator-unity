@@ -1309,7 +1309,7 @@ MonoBehaviour:
   nextScene: EndGameScene
   endLevelButton: {fileID: 121467001}
   completionTilemap: {fileID: 200928935}
-  threshold: 5400
+  threshold: 5914
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -65044,6 +65044,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576140631}
   m_CullTransparentMesh: 1
+--- !u!1 &597746859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 597746860}
+  m_Layer: 0
+  m_Name: 'Threshold: 5,914 (95% of 6,225)'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &597746860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597746859}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.34365, y: -18.020098, z: -1.0193863}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -76378,9 +76409,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000011371274, y: -0.048757367}
+  m_Offset: {x: -0.0000011371274, y: -0.042231582}
   serializedVersion: 2
-  m_Radius: 2.2715414
+  m_Radius: 2.1671429
 --- !u!1 &2005935399
 GameObject:
   m_ObjectHideFlags: 0
