@@ -2,6 +2,7 @@ using System.Globalization;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DetectCompletion : MonoBehaviour
 {
@@ -74,6 +75,7 @@ public class DetectCompletion : MonoBehaviour
             // Modifies tiles on the mowed grass/completion tilemap. Not visible to the player.
             // Exists mostly for position debugging purposes.
             // To disable, remove the below line.
+            GameObject.Find("ProgressBar").GetComponent<Slider>().value += 1;
             completionTilemap.SetTile(position, null);
             mowedTiles++;
         }
