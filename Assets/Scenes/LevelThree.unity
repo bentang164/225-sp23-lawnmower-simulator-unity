@@ -1173,7 +1173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: EndGameScene
   endLevelButton: {fileID: 106621155}
-  jobCompleteText: {fileID: 0}
+  jobCompleteText: {fileID: 457960501}
   completionTilemap: {fileID: 200928935}
   threshold: 5819
 --- !u!483693784 &200928934
