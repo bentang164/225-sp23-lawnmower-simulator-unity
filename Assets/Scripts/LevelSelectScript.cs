@@ -17,7 +17,12 @@ public class LevelSelectScript : MonoBehaviour
         
     }
 
-    public void Level1Button() {
+    public void FreePlayButton() {
+        SceneManager.LoadScene("FreePlay");
+    }
+
+    public void Level1Button()
+    {
         SceneManager.LoadScene("LevelOne");
     }
 
@@ -29,10 +34,5 @@ public class LevelSelectScript : MonoBehaviour
     public void Level3Button()
     {
         SceneManager.LoadScene("LevelThree");
-    }
-
-    public void Level4Button()
-    {
-        SceneManager.LoadScene("LevelFour");
     }
 }
