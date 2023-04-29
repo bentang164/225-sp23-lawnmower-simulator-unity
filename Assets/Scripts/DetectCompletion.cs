@@ -11,6 +11,7 @@ public class DetectCompletion : MonoBehaviour
     private int mowedTiles = 0;
     private bool levelComplete;
     public GameObject endLevelButton;
+    public GameObject jobCompleteText;
     
     private int NUM_TILES = 7000; // 20x14 tilemap.
     private readonly int DEFAULT_Z = 0;
@@ -27,6 +28,7 @@ public class DetectCompletion : MonoBehaviour
         DataTracker.CurrentLevelName = SceneManager.GetActiveScene().name;
        
         endLevelButton.SetActive(false);
+        jobCompleteText.SetActive(false);
         levelComplete = false;
 
         if (player == null)
@@ -44,6 +46,7 @@ public class DetectCompletion : MonoBehaviour
             levelComplete = true;
             if (levelComplete) {
                 endLevelButton.SetActive(true);
+                jobCompleteText.SetActive(true);
             }
             print("Completion threshold exceeded");
             
