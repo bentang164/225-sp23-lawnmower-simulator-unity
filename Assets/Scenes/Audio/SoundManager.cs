@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    // Array that holds sound tracks
+    // 0: Spring sounds    1: Mowing sound    2: Idling mower sound
+    public AudioSource[] soundFX;
+
+
     void Start()
     {
-        // Ambient sounds
+        // Play ambient sound tracks on start
         soundFX[0].Play();
         soundFX[2].Play();
     }
 
 
-    // Array that holds sound tracks
-    public AudioSource[] soundFX;
-    //public PauseMenuScript pauseMenuScript1;
-
     void Update()
     {
-        // If arrow keys are being pressed
+        // If arrow keys are being pressed:
+        // Stop the idling mower sounds &
+        // Play the mowing sound (if it's not already playing)
         if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) 
         {
             soundFX[2].Stop();
@@ -37,12 +40,5 @@ public class SoundManager : MonoBehaviour
                 soundFX[2].Play();
             }
         }
-
-
-        // if (pauseMenuScript1.GetComponent<pauseMenuScript1>().ActiveState() == true) {
-        //     soundFX[0].Stop();
-        //     soundFX[1].Stop();
-        //     soundFX[2].Stop();
-        // }
     }
 }
