@@ -25,6 +25,7 @@ public class PauseMenuScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) {
             pauseMenu.SetActive(!pauseMenu.activeSelf);
             if (pauseMenu.activeSelf) {
+                GameObject.Find("Main Camera").GetComponent<SoundManager>().PauseSounds();
                 Time.timeScale = 0f;
                 if (controlPanel.activeSelf && XButton.activeSelf) {
                     controlPanel.SetActive(!controlPanel.activeSelf);
@@ -32,6 +33,7 @@ public class PauseMenuScript : MonoBehaviour
                     active = false;
                 }
             } else {
+                GameObject.Find("Main Camera").GetComponent<SoundManager>().ResumeSounds();
                 Time.timeScale = 1f;
             }
 
@@ -40,11 +42,13 @@ public class PauseMenuScript : MonoBehaviour
 
     public void Pause() {
         pauseMenu.SetActive(true);
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().PauseSounds();
         Time.timeScale = 0f;
     }
 
     public void ResumeGame() {
         pauseMenu.SetActive(false);
+        GameObject.Find("Main Camera").GetComponent<SoundManager>().ResumeSounds();
         Time.timeScale = 1f;
     }
 
@@ -53,9 +57,9 @@ public class PauseMenuScript : MonoBehaviour
         SceneManager.LoadScene(home);
     }
 
-    // public bool ActiveState() {
-    //     return pauseMenu.activeSelf;
-    // }
+    public bool ActiveState() {
+        return pauseMenu.activeSelf;
+    }
 
 
     public void OpenClosePopUp() {

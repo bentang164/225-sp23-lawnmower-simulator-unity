@@ -7,38 +7,51 @@ public class SoundManager : MonoBehaviour
     // Array that holds sound tracks
     // 0: Spring sounds    1: Mowing sound    2: Idling mower sound
     public AudioSource[] soundFX;
+    
+    private bool gameIsPaused;
+
 
 
     void Start()
     {
+        gameIsPaused = false;
+
         // Play ambient sound tracks on start
         soundFX[0].Play();
         soundFX[2].Play();
     }
 
-
     void Update()
     {
-        // If arrow keys are being pressed:
-        // Stop the idling mower sounds &
-        // Play the mowing sound (if it's not already playing)
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) 
-        {
+        if (gameIsPaused) {
+            soundFX[0].Stop();
+            soundFX[1].Stop();
+            soundFX[2].Stop();
+        }
+        // If arrow keys are being pressed: stop idling mower sound & play mowing sound
+        else if (Input.GetButton("Horizontal") || Input.GetButton("Vertical")) {
             soundFX[2].Stop();
             
-            if(!soundFX[1].isPlaying) 
-            {
+            if(!soundFX[1].isPlaying) {
                 soundFX[1].Play();
             }
         }
-        else 
-        {
+        else {
             soundFX[1].Stop();
             
-            if(!soundFX[2].isPlaying) 
-            {
+            if(!soundFX[2].isPlaying) {
                 soundFX[2].Play();
             }
         }
+    }
+
+
+
+    public void PauseSounds() {
+        gameIsPaused = true;
+    }
+
+    public void ResumeSounds() {
+        gameIsPaused = false;
     }
 }
