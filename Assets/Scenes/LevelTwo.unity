@@ -1175,7 +1175,7 @@ MonoBehaviour:
   endLevelButton: {fileID: 106621155}
   jobCompleteText: {fileID: 457960501}
   completionTilemap: {fileID: 200928935}
-  threshold: 5400
+  threshold: 5300
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -65679,7 +65679,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5400
+  m_MaxValue: 5300
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -69189,7 +69189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491394098}
   m_Layer: 0
-  m_Name: 'Threshold: 5,400'
+  m_Name: 'Threshold: 5,300'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
