@@ -70,21 +70,6 @@ public class TimerFunction : MonoBehaviour
             }
 
         }
-        else if (level.Equals("LevelFour"))
-        {
-            if (DataTracker.LevelFourBestTime == 0 || DataTracker.LevelFourBestTime > timeValue)
-            {
-                DataTracker.LevelFourPrevBestTime = DataTracker.LevelFourBestTime;
-                DataTracker.LevelFourBestTime = timeValue;
-                DataTracker.NewBestBool = true;
-            }
-            else
-            {
-                DataTracker.NewBestBool = false;
-            }
-
-        }
-        //Debug.Log("" + (int)LevelOneBestTime);
     }
 
     public void StopCounting()
