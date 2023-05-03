@@ -30,46 +30,16 @@ public class TimerFunction : MonoBehaviour
     public void SetBestTime()
     {
         string level = DataTracker.CurrentLevelName;
-        if (level.Equals("LevelOne"))
-        {
-            if (DataTracker.LevelOneBestTime == 0 || DataTracker.LevelOneBestTime > timeValue)
-            {
-                DataTracker.LevelOnePrevBestTime = DataTracker.LevelOneBestTime;
-                DataTracker.LevelOneBestTime = timeValue;
-                DataTracker.NewBestBool = true;
-            } else
-            {
-                DataTracker.NewBestBool = false;
-            }
+        float currLevelBest = DataTracker.BestTimes[level];
 
+        if (currLevelBest == 0 || currLevelBest > timeValue) {
+            DataTracker.PrevBestTimes[level] = currLevelBest;
+            DataTracker.BestTimes[level] = timeValue;
+            DataTracker.NewBestBool = true;
+        } else {
+            DataTracker.NewBestBool = false;
         }
-        else if (level.Equals("LevelTwo"))
-        {
-            if (DataTracker.LevelTwoBestTime == 0 || DataTracker.LevelTwoBestTime > timeValue)
-            {
-                DataTracker.LevelTwoPrevBestTime = DataTracker.LevelTwoBestTime;
-                DataTracker.LevelTwoBestTime = timeValue;
-                DataTracker.NewBestBool = true;
-            } else
-            {
-                DataTracker.NewBestBool = false;
-            }
 
-        } 
-        else if (level.Equals("LevelThree"))
-        {
-            if (DataTracker.LevelThreeBestTime == 0 || DataTracker.LevelThreeBestTime > timeValue)
-            {
-                DataTracker.LevelThreePrevBestTime = DataTracker.LevelThreeBestTime;
-                DataTracker.LevelThreeBestTime = timeValue;
-                DataTracker.NewBestBool = true;
-            }
-            else
-            {
-                DataTracker.NewBestBool = false;
-            }
-
-        }
     }
 
     public void StopCounting()

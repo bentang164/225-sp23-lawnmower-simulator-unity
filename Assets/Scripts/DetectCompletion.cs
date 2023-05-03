@@ -24,12 +24,12 @@ public class DetectCompletion : MonoBehaviour
 
     //Start is called before the first frame update
     void Start()
-    {
-        DataTracker.CurrentLevelName = SceneManager.GetActiveScene().name;
-       
+    {       
         endLevelButton.SetActive(false);
         jobCompleteText.SetActive(false);
         levelComplete = false;
+
+        DataTracker.CurrentLevelName = SceneManager.GetActiveScene().name;
 
         if (player == null)
         {

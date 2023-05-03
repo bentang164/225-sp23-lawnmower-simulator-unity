@@ -6,13 +6,17 @@ public static class DataTracker
 {
     public static string CurrentLevelName { get; set; }
 
-    public static float LevelOnePrevBestTime = 0;
-    public static float LevelTwoPrevBestTime = 0;
-    public static float LevelThreePrevBestTime = 0;
+    public static IDictionary<string, float> BestTimes = new Dictionary<string, float>(){
+        {"LevelOne", 0},
+        {"LevelTwo", 0},
+        {"LevelThree", 0},
+    };
 
-    public static float LevelOneBestTime = 0;
-    public static float LevelTwoBestTime = 0;
-    public static float LevelThreeBestTime = 0;
+    public static IDictionary<string, float> PrevBestTimes = new Dictionary<string, float>(){
+        {"LevelOne", 0},
+        {"LevelTwo", 0},
+        {"LevelThree", 0},
+    };
 
     public static bool NewBestBool = false;
 }
