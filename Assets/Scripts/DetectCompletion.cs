@@ -6,14 +6,21 @@ using UnityEngine.UI;
 
 public class DetectCompletion : MonoBehaviour
 {
-    public string nextScene;
-    private GameObject player = null;
+    [SerializeField]
+    private string nextScene;
+
     private int mowedTiles = 0;
-    private bool levelComplete;
-    public GameObject endLevelButton;
-    public GameObject jobCompleteText;
-    
-    private int NUM_TILES = 7000; // 20x14 tilemap.
+
+    private GameObject player;
+
+    [SerializeField]
+    private GameObject endLevelButton;
+
+    [SerializeField]
+    private GameObject jobCompleteText;
+
+    private Slider progressBar;
+
     private readonly int DEFAULT_Z = 0;
 
     [SerializeField]
@@ -27,14 +34,12 @@ public class DetectCompletion : MonoBehaviour
     {       
         endLevelButton.SetActive(false);
         jobCompleteText.SetActive(false);
-        levelComplete = false;
 
         DataTracker.CurrentLevelName = SceneManager.GetActiveScene().name;
 
-        if (player == null)
-        {
-            player = GameObject.Find("Player");
-        }
+        progressBar = GameObject.Find("ProgressBar").GetComponent<Slider>();
+
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -43,20 +48,16 @@ public class DetectCompletion : MonoBehaviour
         if (mowedTiles >= threshold)
         {
             GameObject.Find("Timer").GetComponent<TimerFunction>().StopCounting();
-            levelComplete = true;
-            if (levelComplete) {
-                endLevelButton.SetActive(true);
-                jobCompleteText.SetActive(true);
-            }
-            print("Completion threshold exceeded");
-            
-
+            endLevelButton.SetActive(true);
+            jobCompleteText.SetActive(true);
+        
         }
 
         // Pull raw x and y coordinates for the player's position
         float playerRawX = player.transform.position.x;
         float playerRawY = player.transform.position.y;
 
+        //Mows a 4x4 square of tiles centered on the lawnmower center
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
                 Mow(new Vector3Int(Mathf.RoundToInt(playerRawX - 2 + i), Mathf.RoundToInt(playerRawY - 2 + j), DEFAULT_Z));
@@ -66,8 +67,8 @@ public class DetectCompletion : MonoBehaviour
 
     public void completeLevel() {
         GameObject.Find("Timer").GetComponent<TimerFunction>().SetBestTime();
+
         SceneManager.LoadScene(nextScene);
-        levelComplete = false;
         endLevelButton.SetActive(false);
     }
 
@@ -78,9 +79,10 @@ public class DetectCompletion : MonoBehaviour
             // Modifies tiles on the mowed grass/completion tilemap. Not visible to the player.
             // Exists mostly for position debugging purposes.
             // To disable, remove the below line.
-            GameObject.Find("ProgressBar").GetComponent<Slider>().value += 1;
             completionTilemap.SetTile(position, null);
+
             mowedTiles++;
+            progressBar.value++;
         }
     }
 }
