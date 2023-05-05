@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 public class TitleScreenScript : MonoBehaviour
 {
     public string playGame;
-    // Start is called before the first frame update
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
        
