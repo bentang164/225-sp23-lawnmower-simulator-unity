@@ -13,12 +13,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // We don't need to do anything here.
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
         
 
         //code partially yoinked from: https://answers.unity.com/questions/785479/how-to-create-an-asteroids-style-moving-in-2d-mode.html
-        //transform.Translate(new Vector2(0, 1) * Time.deltaTime * speed * Input.GetAxis("Vertical"));
         GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0, 1) * Time.deltaTime * Input.GetAxis("Vertical") * speed);
 
         //decelerates mower quicker to simulate the operator stopping it
