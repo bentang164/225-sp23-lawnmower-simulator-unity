@@ -46,11 +46,12 @@ public class SoundManager : MonoBehaviour
     }
 
 
-
+    //Called when the pause menu gets opened
     public void PauseSounds() {
         gameIsPaused = true;
     }
 
+    //Called when the pause menu gets closed
     public void ResumeSounds() {
         gameIsPaused = false;
     }

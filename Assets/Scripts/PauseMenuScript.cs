@@ -11,7 +11,7 @@ public class PauseMenuScript : MonoBehaviour
     public GameObject controlPanel;
     public GameObject XButton;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         pauseMenu.SetActive(false);
@@ -19,7 +19,7 @@ public class PauseMenuScript : MonoBehaviour
         XButton.SetActive(false);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
