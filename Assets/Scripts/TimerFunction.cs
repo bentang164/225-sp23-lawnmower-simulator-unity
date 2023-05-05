@@ -20,11 +20,14 @@ public class TimerFunction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (!stopCounting)
         {
+            //Time.time grabs the total time since application start, so we need to offset it
             timeValue = Time.time - startTime;
-            GetComponent<TMP_Text>().text = "" + (int)timeValue;
+            GetComponent<TMP_Text>().text = ((int)timeValue).ToString();
         }
+
     }
 
     public void SetBestTime()
@@ -33,15 +36,20 @@ public class TimerFunction : MonoBehaviour
         float currLevelBest = DataTracker.BestTimes[level];
 
         if (currLevelBest == 0 || currLevelBest > timeValue) {
+
             DataTracker.PrevBestTimes[level] = currLevelBest;
             DataTracker.BestTimes[level] = timeValue;
             DataTracker.NewBestBool = true;
+
         } else {
+
             DataTracker.NewBestBool = false;
+
         }
 
     }
 
+    //When the completion threshold is reached, this function is called by DetectCompletion.cs to stop the timer
     public void StopCounting()
     {
         stopCounting = true;

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public static class DataTracker
 {
-    public static string CurrentLevelName { get; set; }
+    //This class keeps track of data that needs to be used by multiple scenes
+
+    public static string CurrentLevelName;
 
     public static IDictionary<string, float> BestTimes = new Dictionary<string, float>(){
         {"LevelOne", 0},
@@ -18,5 +20,6 @@ public static class DataTracker
         {"LevelThree", 0},
     };
 
+    //whether a new best was achieved on the current level; used by EndLevelScript to determine the Best and Previous Best texts; set by TimerFunction
     public static bool NewBestBool = false;
 }
