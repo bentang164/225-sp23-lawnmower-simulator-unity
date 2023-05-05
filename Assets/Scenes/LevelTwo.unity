@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -98.453, y: 93.29199}
+  m_AnchoredPosition: {x: -98.453, y: 60.5}
   m_SizeDelta: {x: 179.186, y: 73.04901}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106621157
@@ -1175,7 +1175,7 @@ MonoBehaviour:
   endLevelButton: {fileID: 106621155}
   jobCompleteText: {fileID: 457960501}
   completionTilemap: {fileID: 200928935}
-  threshold: 4600
+  threshold: 5500
 --- !u!483693784 &200928934
 TilemapRenderer:
   m_ObjectHideFlags: 0
@@ -65544,7 +65544,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 4600
+  m_MaxValue: 5500
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -66383,7 +66383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.87, y: 0.5}
   m_AnchorMax: {x: 0.87, y: 0.5}
-  m_AnchoredPosition: {x: 273.39996, y: 202.79997}
+  m_AnchoredPosition: {x: 273.4, y: 202.79997}
   m_SizeDelta: {x: 1386.9531, y: -2.8009949}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &750806664
@@ -69189,7 +69189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1491394098}
   m_Layer: 0
-  m_Name: 'Threshold: 4,600'
+  m_Name: 'Threshold: 5,500'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
