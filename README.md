@@ -7,4 +7,4 @@ COMP 225-01: Software Design and Development
 Contains **3** levels, along with an additional **free play** level. 
 
 ## Installation
-Download and run the laterst release to play
+Download and run the latest release (on the right) for your given operating system (Mac or Windows).
