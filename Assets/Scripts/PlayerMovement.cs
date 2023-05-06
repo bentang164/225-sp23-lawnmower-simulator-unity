@@ -1,5 +1,3 @@
-//using System.Collections;
-//using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
@@ -12,12 +10,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private float speed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        // We don't need to do anything here.
-    }
 
     // Update is called once per frame
     void Update()
