@@ -8,3 +8,5 @@ Contains **3** levels, along with an additional **free play** level.
 
 ## Installation
 Download and run the latest release (on the right) for your given operating system (Mac or Windows).
+
+Note: The macOS version is not notarized. To open the app, control+click the icon, and click Open, then Open again on the prompt.
